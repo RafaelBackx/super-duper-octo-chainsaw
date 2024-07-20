@@ -18,7 +18,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
     - name: Set up docker
-      run: docker-compose up -d
+      run: docker-compose up --build -d
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
