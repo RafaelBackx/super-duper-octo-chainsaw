@@ -10,6 +10,8 @@ const app = express();
 app.use(bodyParser.json())
 app.use(cors())
 
+console.log(process.env);
+
 app.use('/users', userRoutes);
 // Error handler
 app.use((error, req, res, next) => {
