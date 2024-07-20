@@ -32,6 +32,12 @@ jobs:
       run: npm ci
       working-directory: backend
 
+    - name: run migrations
+      run: |
+        npm install -g knex
+        knex migrate:latest
+      working-directory: backend
+
     - name: Run tests
       env:
         DB_HOST: localhost
