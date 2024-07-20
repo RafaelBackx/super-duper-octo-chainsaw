@@ -15,8 +15,6 @@ describe("Test the root path", () => {
         .send(data)
         .expect(201)
         .then(response => {
-            console.log(response.statusCode);
-            console.log(response.text);
             expect(response => {
                 const sameEmail = response.body.email === data.email;
                 const sameFirstname = response.body.firstname === data.firstname;
