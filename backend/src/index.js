@@ -13,7 +13,7 @@ app.use(cors())
 app.use('/users', userRoutes);
 // Error handler
 app.use((error, req, res, next) => {
-    console.log(error.message);
+    console.log(error);
     return res.status(500).send(error.message)
 })
 
