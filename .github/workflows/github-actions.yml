@@ -17,6 +17,14 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+    - name: create env file
+      run: |
+        cd backend
+        touch .env
+        echo DB_HOST=${{ vars.DB_HOST }} >> .env
+        echo DB_USER=${{ vars.DB_USER }} >> .env
+        echo DB_PORT=${{ vars.DB_PORT }} >> .env
+        echo DB_PASSWORD=${{ secrets.DB_PASSWORD }} >> .env
     - name: Set up docker
       run: docker-compose up --build -d
     - name: Set up Node.js
