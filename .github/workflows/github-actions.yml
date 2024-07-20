@@ -30,6 +30,12 @@ jobs:
       run: npm ci
       working-directory: backend
 
+    - name: print-vars
+      run: |
+        echo ${{ vars.DB_HOST }}
+        echo ${{ vars.DB_PORT }}
+        echo ${{ vars.DB_USER }}
+        echo ${{ secrets.DB_PASSWORD }}
     - name: Run tests
       env:
         DB_HOST: ${{ vars.DB_HOST }}
