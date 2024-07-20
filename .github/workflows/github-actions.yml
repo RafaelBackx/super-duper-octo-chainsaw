@@ -31,10 +31,10 @@ jobs:
       working-directory: backend
 
     - name: Run tests
-      run: npm test
-      working-directory: backend
       env:
         DB_HOST: ${{ vars.DB_HOST }}
         DB_USER: ${{ vars.DB_USER }}
         DB_PORT: ${{ vars.DB_PORT }}
         DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+      run: npm test
+      working-directory: backend
