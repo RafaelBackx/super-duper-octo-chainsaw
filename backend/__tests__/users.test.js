@@ -16,6 +16,7 @@ describe("Test the root path", () => {
         // .expect(201)
         .then(response => {
             console.log(response.statusCode);
+            console.log(response.text);
             // expect(response.statusCode).toBe(201)
             expect(response => {
                 const sameEmail = response.body.email === data.email;
@@ -38,6 +39,7 @@ describe("Test the root path", () => {
         // .expect(200)
         .then(response => {
             console.log(response.statusCode);
+            console.log(response.text);
             expect(response.body).toBeDefined()
         })
     })
